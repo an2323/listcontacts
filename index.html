@@ -22,7 +22,7 @@
             </td>
 	</script>
 	<script type="text/template" id="no-contact">
-		<td colspan="5">В вашем органайзере еще нет контактов!</td>		
+		<td colspan="5">В вашем органайзере еще нет контактов!</td>			
 	</script>
 	<script type="text/template" id="list-contact">
 		 <div class="span12">
@@ -52,26 +52,29 @@
 		 <div class="row">
             <div class="span12">
                 <div class="row w-title-h">
-                    <h1 class="title-h">Добавить контакт</h1>
+                    <h1 class="title-h"></h1>
                 </div>
                 <div class="row">
                     <form class="form-horizontal">
 	                    <div class="control-group">
-	                        <label class="control-label" for="inputFirstname">Имя</label>
+	                        <label class="control-label" for="inputName">Имя</label>
 	                        <div class="controls">
-	                            <input type="text" name="name" id="inputFirstname" placeholder="Имя" value="<%- name %>">
+	                            <input type="text" name="name" id="inputName" placeholder="Имя" value="<%- name %>">
+	                            <span class="help-inline"></span>
 	                        </div>
 	                    </div>
 	                    <div class="control-group">
-	                        <label class="control-label" for="inputEmail">Возраст</label>
+	                        <label class="control-label" for="inputAge">Возраст</label>
 	                        <div class="controls">
-	                            <input type="text" name="age" id="inputEmail" placeholder="Возраст" value="<%- age %>">
+	                            <input type="text" name="age" id="inputAge" placeholder="Возраст" value="<%- age %>">
+	                            <span class="help-inline"></span>
 	                        </div>
 	                    </div>
 	                    <div class="control-group">
-	                        <label class="control-label" for="inputPhone">Email</label>
+	                        <label class="control-label" for="inputEmail">Email</label>
 	                        <div class="controls">
-	                            <input type="text" name="email" id="inputPhone" placeholder="Email" value="<%- email %>">
+	                            <input type="text" name="email" id="inputEmail" placeholder="Email" value="<%- email %>">
+	                            <span class="help-inline"></span>	                            
 	                        </div>
 	                    </div>
 	                    <div class="row">
@@ -88,15 +91,19 @@
             </div>
          </div>		
 	</script>
-	<script type="text/javascript" src="js/models/user.js"></script>
-	<script type="text/javascript" src="js/collections/users.js"></script>
-	<script type="text/javascript" src="js/views/empty-view.js"></script>
-	
-	<script type="text/javascript" src="js/views/user-item-view.js"></script>
-	<script type="text/javascript" src="js/views/users-view.js"></script>
-	<script type="text/javascript" src="js/views/user-edit-view.js"></script>
-	<script type="text/javascript" src="js/routers/router.js"></script>
-
 	<script type="text/javascript" src="js/app.js"></script>
+
+	<script type="text/javascript" src="js/apps/users/common/form_view.js"></script>
+	<script type="text/javascript" src="js/entities/user.js"></script>
+	<script type="text/javascript" src="js/apps/users/list/list_view.js"></script>
+	<script type="text/javascript" src="js/apps/users/edit/edit_view.js"></script>
+	<script type="text/javascript" src="js/apps/users/new/new_view.js"></script>
+	<script type="text/javascript" src="js/apps/users/list/list_controller.js"></script>
+	<script type="text/javascript" src="js/apps/users/edit/edit_controller.js"></script>
+	<script type="text/javascript" src="js/apps/users/new/new_controller.js"></script>
+	<script type="text/javascript" src="js/apps/users/user_app.js"></script>
+	<script type="text/javascript">
+		App.start();
+	</script>
 </body>
 </html>

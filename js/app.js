@@ -1,7 +1,12 @@
-var app = app || {};
+var App = new Marionette.Application();
 
-//Backbone view example
-(function() {
-	new app.Router();
-	Backbone.history.start();
-})();
+App.addRegions({
+	'mainRegion': '#wrapper'
+});
+
+App.on("start", function(){
+  if(Backbone.history){
+    Backbone.history.start();
+  }
+});
+
