@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backbone App</title>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="css/font-awesome.css" type="text/css" rel="stylesheet"/>
+	<link href="css/all.css" type="text/css" rel="stylesheet"/>
+
+	<script type="text/javascript" src="js/vendor/jquery.js"></script>
+	<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/vendor/underscore.js"></script>
+	<script type="text/javascript" src="js/vendor/backbone.js"></script>
+	<script type="text/javascript" src="js/vendor/backbone.localstorage.js"></script>
+	<script type="text/javascript" src="js/vendor/backbone.marionette.js"></script>
+</head>
+<body>
+    <div class="container" id="wrapper">
+    </div>
+	<script type="text/template" id="item-contact">
+            <td><%- name %></td><td><%- age %></td><td><%- email %></td><td style="text-align:  center;"><button class="btn btn-info edit" href="#"><i class="fa fa-edit"></i> Редактировать</button> <button class="btn remove btn-danger" href="#"><i class="fa fa-remove"></i> Удалить</button>
+            </td>
+	</script>
+	<script type="text/template" id="no-contact">
+		<td colspan="5">В вашем органайзере еще нет контактов!</td>		
+	</script>
+	<script type="text/template" id="list-contact">
+		 <div class="span12">
+            <div class="row w-title-h">
+                <h1 class="title-h">Список контактов</h1>
+            </div>
+           <div class="row">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Имя</th><th>Возраст</th><th>Email</th><th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            </div>
+            <div class="row">
+                <div class="span2">
+                    <button class="add btn btn-info btn-block" href="#"><i class="fa fa-plus"></i>Добавить</button>
+                </div>
+            </div>
+        </div>
+	</script>
+	<script type="text/template" id="edit-contact">
+		 <div class="row">
+            <div class="span12">
+                <div class="row w-title-h">
+                    <h1 class="title-h">Добавить контакт</h1>
+                </div>
+                <div class="row">
+                    <form class="form-horizontal">
+	                    <div class="control-group">
+	                        <label class="control-label" for="inputFirstname">Имя</label>
+	                        <div class="controls">
+	                            <input type="text" name="name" id="inputFirstname" placeholder="Имя" value="<%- name %>">
+	                        </div>
+	                    </div>
+	                    <div class="control-group">
+	                        <label class="control-label" for="inputEmail">Возраст</label>
+	                        <div class="controls">
+	                            <input type="text" name="age" id="inputEmail" placeholder="Возраст" value="<%- age %>">
+	                        </div>
+	                    </div>
+	                    <div class="control-group">
+	                        <label class="control-label" for="inputPhone">Email</label>
+	                        <div class="controls">
+	                            <input type="text" name="email" id="inputPhone" placeholder="Email" value="<%- email %>">
+	                        </div>
+	                    </div>
+	                    <div class="row">
+	                        <div class="span6">
+	                            <div class="control-group">
+	                                <div class="controls">
+	                                    <button class="btn btn-info btn-block" href="#"><i class="fa fa-save" ></i> Save person</button>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </form>
+                </div>
+            </div>
+         </div>		
+	</script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
