@@ -1,12 +1,14 @@
 var app = app || {};
 
 (function() {
-	app.UserEditView = Backbone.View.extend({
+	app.UserEditView = Marionette.ItemView.extend({
 		tagName: 'div',
 
 		events: {
 			'submit form': 'submitClicked'
 		},
+
+		template: '#edit-contact',
 
 		submitClicked: function(ev) {
 			//Backbone Syphon plugin
@@ -25,13 +27,7 @@ var app = app || {};
 					Backbone.history.navigate("users");				
 				});
 			});
-		},
-
-		template: _.template($('#edit-contact').html()),
-
-		render: function() {
-			this.$el.html(this.template(this.model.toJSON()));
-			return this;
 		}
 	});
 })();
+
